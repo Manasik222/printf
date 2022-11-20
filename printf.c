@@ -9,7 +9,8 @@ int _printf(char *format, ...)
 	int written = 0, (*structype)(char *, va_list);
 	char q[3];
 	va_list pa;
-  if (format == NULL)
+
+	if (format == NULL)
 		return (-1);
 	q[2] = '\0';
 	va_start(pa, format);
