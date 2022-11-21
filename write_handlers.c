@@ -62,7 +62,7 @@ int write_number(int is_negative, int ind, char buffer[],int flags, int width, i
 =======
 int write_number(int is_negative, int ind, char buffer[],
 	int flags, int width, int precision, int size)
->>>>>>> 43095c5a1434532076b97c39e4746a7af6b841d1
+>>>>>>> c5a1434532076b97c39e4746a7af6b841d1
 {
 	int length = BUFSIZ - ind - 1;
 	char padd = ' ', extra_ch = 0;
