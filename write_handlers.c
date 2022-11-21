@@ -12,7 +12,7 @@
  * 
  * Return: Number of chars printed.
  */
-Char * write_number(int ind, char buffer[],int flags, int width, int prec,int length, char padd, char extra_c)
+int write_number(int ind, char buffer[],int flags, int width, int prec,int length, char padd, char extra_c)
 int handle_write_char(char c, char buffer[],
 	int flags, int width, int precision, int size)
 { /* char is stored at left and paddind at buffer's right */
