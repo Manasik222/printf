@@ -5,6 +5,11 @@ void print_buffer(char buffer[], int *buff_ind);
 /**
  * _printf - Printf function
  * @format: format.
+ * @buffer: Buffer arry to handle print
+ * @flags: calculates active flags
+ * @width: get width.
+ * @precision: precision specifier
+ * @size: size specifier
  * Return: Printed chars.
  */
 int _printf(const char *format, ...)
@@ -12,7 +17,7 @@ int _printf(const char *format, ...)
 	int i, printed = 0, printed_chars = 0;
 	int flags, width, precision, size, buff_ind = 0;
 	va_list list;
-	char buffer[BUFF_SIZE];
+	char buffer[BUFSIZ];
 
 	if (format == NULL)
 		return (-1);
