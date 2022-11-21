@@ -26,22 +26,22 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == '%')
 				{
-					count += _putchar(format[i]);
+					count += putchar(format[i]);
 					i += 2;
 				}
 				else
 				{
 					m = get_func(format[i + 1]);
-					if (m)
+					if(m)
 						count += m(args);
 					else
-						count = _putchar(format[i]) + _putchar(format[i + 1]);
+						count = putchar(format[i]) + putchar(format[i + 1]);
 					i += 2;
 				}
 			}
 			else
 			{
-				count += _putchar(format[i]);
+				count += putchar(format[i]);
 				i++;
 			}
 		}
@@ -49,3 +49,4 @@ int _printf(const char *format, ...)
 		return (count);
 	}
 	return (-1);
+}
