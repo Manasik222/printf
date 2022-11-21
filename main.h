@@ -1,37 +1,32 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
-
+/* libraries to use */
+#include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
-#include <unistd.h>
+#include <stddef.h>
+#include <string.h>
 /**
- * struct print - struct for print function
- * @conv_spec: conversion specifier.
- * @f: pointer to the printer function
- * Return: none
+ * struct pr - struct for operations
+ * @op: operation
+ * @f: to be listed
+ * Description: Checks if there's an operation
  */
-typedef struct print
+typedef struct pr
 {
-	char *conv_spec;
-	int (*f)(va_list, char *);
-} print_t;
-
-int (*get_pnt_funct(const char *s, int *pos))(va_list, char *);
-int print_char(va_list args, char *buffer);
-int print_str(va_list args, char *buffer);
-int print_int(va_list args, char *buffer);
-int print_unint(va_list args, char *buffer);
+	char *op;
+	int (*f)(va_list);
+} pr_f;
+/* Prototypes */
+int _putchar(char c);
 int _printf(const char *format, ...);
-int _print_buf(char *buf, int n);
-int print_bin(va_list args, char *buffer);
-int print_address(va_list, char *buffer);
-int print_shex(va_list, char *buffer);
-int print_chex(va_list, char *buffer);
-int print_octal(va_list, char *buffer);
-int custom_str(va_list, char *buffer);
-int pnt_plus_int(va_list, char *buffer);
-int pnt_space_int(va_list, char *buffer);
-int pnt_o_octal(va_list, char *buffer);
-int pnt_upp_hex(va_list, char *buffer);
-
+int print_c(va_list list);
+int print_s(va_list list);
+int print_i(va_list list);
+int print_d(va_list list);
+int print_r(va_list list);
+int print_mod(va_list list);
+int print_d(va_list list);
+int _strlen(char *s);
+int _funcion(const char *format, pr_f ops[], va_list ap);
 #endif
